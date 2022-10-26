@@ -36,7 +36,7 @@
                     result += "\n";
                     result += "\n";
                 } else {
-                    result += "정상 : ( " + divamt.toLocaleString() + "원) X ( " + totcnt.toLocaleString() + "명) = " + inamt.toLocaleString() + "원";
+                    result += "일반 : ( " + divamt.toLocaleString() + "원) X ( " + totcnt.toLocaleString() + "명) = " + inamt.toLocaleString() + "원";
                     result += "\n";
                     result += "예외 : ( " + excamt.toLocaleString() + "원) X ( " + exccnt.toLocaleString() + "명) = " + totexcamt.toLocaleString() + "원";
                     result += "\n";
@@ -52,14 +52,16 @@
                 result += "■ 남은 금액 :";
                 result += "\n";
                 result += (inamt - (totpayamt-totexcamt)).toLocaleString() + "원";
-                result += "\n";
-                result += "\n";
-                result += "클립보드에 복사하기가 완료되었습니다.";
-                result += "\n";
-                result += "정산글에 붙여넣기만 하시면 됩니다.";
 
+                var display = result.replace(/\n/g, '<br/>');
+                display += "\n";
+                display += "\n";
+                display += "클립보드에 복사하기가 완료되었습니다.";
+                display += "\n";
+                display += "정산글에 붙여넣기만 하시면 됩니다.";
+                
 
-                document.getElementById('result').innerHTML = result.replace(/\n/g, '<br/>');;
+                document.getElementById('result').innerHTML = display;
 
                 navigator.clipboard.writeText(result);
             }
