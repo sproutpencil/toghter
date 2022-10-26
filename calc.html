@@ -52,6 +52,11 @@
                 result += "■ 남은 금액 :";
                 result += "\n";
                 result += (inamt - (totpayamt-totexcamt)).toLocaleString() + "원";
+                result += "\n";
+                result += "\n";
+                result += "클립보드에 복사하기가 완료되었습니다.";
+                result += "\n";
+                result += "정산글에 붙여넣기만 하시면 됩니다.";
 
 
                 document.getElementById('result').innerHTML = result.replace(/\n/g, '<br/>');;
@@ -71,8 +76,8 @@
         <input id="payamt3" name="payamt3" /> 사용금액3<br/>
         <input id="totcnt" name="totcnt" /> 인원 (예외인원 제외)<br/>
         <input id="excamt" name="excamt" /> 예외금액<br/>
-        <input id="exccnt" name="exccnt" /> 예외인원<br/>
-        <a href="javascript:calc();">결과</a><br/>
+        <input id="exccnt" name="exccnt" /> 예외인원<br/><br/>
+        <a href="javascript:calc();">[계산하기]</a><br/>
         <p id="result" name="result"></p>
     </body>
 </html>
